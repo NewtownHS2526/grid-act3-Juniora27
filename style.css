@@ -30,13 +30,25 @@ body {
 }
 
 /* DIRECTION 2: Add grid-template-columns with 4 equal columns using repeat(4, 1fr) */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+ } /* optional spacing between columns */
 
 
 /* DIRECTION 3: Add grid-template-rows with 6 rows: auto auto 300px auto 150px auto */
-
+.container {
+  display: grid;
+  grid-template-rows: auto auto 300px auto 150px auto;
+}
 
 /* DIRECTION 4: Add a gap of 15px between all grid items */
-
+.container {
+  display: grid;
+  grid-template-rows: auto auto 300px auto 150px auto;
+  gap: 15px;
+}
 
 /* DIRECTION 5: Define grid-template-areas with the layout below:
    Row 1: "header header header header"
@@ -45,7 +57,18 @@ body {
    Row 4: "sidebar article1 article2 article3"
    Row 5: "ad ad ad ad"
    Row 6: "footer footer footer footer"
-*/
+*/.container {
+  display: grid;
+  grid-template-rows: auto auto 300px auto 150px auto;
+  gap: 15px;
+  grid-template-areas:
+    "header  header  header  header"
+    "navbar  navbar  navbar  navbar"
+    "sidebar main    main    main"
+    "sidebar article1 article2 article3"
+    "ad      ad      ad      ad"
+    "footer  footer  footer  footer";
+}
 
 
 /* DIRECTION 6: Set padding to 20px for the .container */
@@ -65,14 +88,14 @@ body {
 }
 
 /* DIRECTION 8: Make the h1 font-size 2.5em */
-.header h1 {
-
+.container{
+padding: 20px;
 }
 
 /* DIRECTION 9: Set the header paragraph margin-top to 10px */
-.header p {
 
-}
+
+
 
 /* ========================================
    NAVIGATION BAR
@@ -87,9 +110,20 @@ body {
 
 /* DIRECTION 11: Set .navbar display to flex */
 
+    .navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;            
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
 
 /* DIRECTION 12: Add justify-content: space-around to .navbar */
-
+.navbar {
+  display: flex;
+  justify-content: space-around;
+}
 
 /* DIRECTION 13: Change .navbar a elements color to white and remove text-decoration */
 .navbar a {
@@ -118,11 +152,16 @@ body {
 
 /* DIRECTION 15: Set .sidebar h2 color to #667eea */
 .sidebar h2 {
-
+    color: 667eea;
 }
+
 
 /* DIRECTION 16: Remove list-style from .sidebar ul and set margin-top to 15px */
 .sidebar ul {
+    .sidebar ul {
+  list-style: none;
+  margin-top: 15px;
+}
 
 
 }
@@ -154,15 +193,25 @@ body {
 
 /* DIRECTION 18: Set .main-content h2 color to #333 and margin-bottom to 15px */
 .main-content h2 {
-
-
+    background-color: #333;
+    margin:15px;
 }
+
+
+
+
+
 
 /* DIRECTION 19: Set .main-content p line-height to 1.6 and margin-bottom to 10px */
 .main-content p {
-
-
+    margin-bottom: 10px
+    line-height 1.6;
 }
+
+
+
+
+
 
 /* ========================================
    ARTICLE SECTIONS
@@ -176,6 +225,13 @@ body {
     border-radius: 8px;
     text-align: center;
 }
+.article1 {
+  grid-area: article1;
+}
+  
+ 
+
+
 
 /* DIRECTION 21: Assign grid-area: article2 to .article2 class */
 .article2 {
@@ -193,6 +249,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    grid-area:auto
 }
 
 /* ========================================
@@ -206,11 +263,12 @@ body {
     border-radius: 8px;
     text-align: center;
     color: white;
+    grid-area: auto;
 }
 
 /* DIRECTION 24: Set .advertisement h3 font-size to 1.8em */
 .advertisement h3 {
-
+font-size:1.8em;
 }
 
 /* ========================================
@@ -224,6 +282,7 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 8px;
+    grid-area: auto;
 }
 
 /* ========================================
